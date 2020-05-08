@@ -42,6 +42,10 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    this.textInput.focus();
+  }
+
   // we want a function that searches the giphy api using fetch and puts the search term into the url
   searchGiphy = async (searchTerm) => {
     this.setState({
@@ -124,6 +128,7 @@ class App extends Component {
 
     // are there gifs?
     const hasResults = gifs.length;
+
     return (
       <div className="page">
         <Header clearSearch={this.clearSearch} hasResults={hasResults} />
